@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
-
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import DisplayCard from './components/Layout/DisplayCard';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [mode, setMode] = useState('dark');
+  const theme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
+
+  const changeModeHandler = ( ) => {
+      if(mode === 'dark'){
+          setMode('light');
+      }
+      else{
+          setMode('dark');
+      }
+  };
+  
+
+  // return (
+  //   <ThemeProvider theme = {theme}>
+  //   <Box>
+  //   <Header mode = {mode} changeMode = {changeModeHandler}/>
+  //   <TasksManager mode = {mode}/>
+  //   </Box>
+  //   </ThemeProvider>
+  // );
+
+  return (<ThemeProvider theme = {theme}>
+    <DisplayCard mode = {mode} changeMode = {changeModeHandler}/>
+    </ThemeProvider>
   );
 }
 
