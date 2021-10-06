@@ -26,11 +26,6 @@ const TasksManager = (props) => {
     setTasksList(newArr);
   };
 
-  const editTaskHandler = (item) => () => {
-    const index = tasksList.indexOf(item);
-    const newArr = [...tasksList];
-  }
-
   return (
     <Fragment>
       <TextBar addTask={addTaskHandler} />

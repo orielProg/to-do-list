@@ -8,11 +8,13 @@ const TextBar = (props) => {
 
   const addUserHandler = () => {
     props.addTask(currentInput);
+    setCurrentInput("");
   };
 
   return (
     <Fragment>
       <TextField
+        value={currentInput}
         onChange={(event) => setCurrentInput(event.target.value)}
         className={classes.taskbar}
         id="outlined-basic"
@@ -30,6 +32,6 @@ const TextBar = (props) => {
       </Button>
     </Fragment>
   );
-}; 
+};
 
 export default TextBar;

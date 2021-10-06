@@ -6,10 +6,8 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import classes from "./TasksList.module.css";
 import { Divider } from "@mui/material";
-import Edit from "@mui/icons-material/Edit";
 
 const TasksList = (props) => {
   let textColor = props.mode === "dark" ? "white" : "black";
@@ -24,22 +22,13 @@ const TasksList = (props) => {
             divider
             key={Math.random().toString()}
             secondaryAction={
-              <Fragment>
-                <IconButton
-                  edge="end"
-                  aria-label="delete"
-                  onClick={props.removeTask(item)}
-                >
-                  <DeleteIcon />
-                </IconButton>
-                <IconButton
-                  edge="end"
-                  aria-label="edit"
-                  onClick={props.editTask(item)}
-                >
-                  <EditIcon />
-                </IconButton>
-              </Fragment>
+              <IconButton
+                edge="end"
+                aria-label="delete"
+                onClick={props.removeTask(item)}
+              >
+                <DeleteIcon />
+              </IconButton>
             }
           >
             <ListItemButton role="checkbox" onClick={props.toggleHandler(item)}>
