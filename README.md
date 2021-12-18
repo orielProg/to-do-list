@@ -5,7 +5,6 @@ This project is a simple to do list which the user can create, complete and dele
 ## Technologies and main dependencies
 
 * React
-* Redux toolkit
 * MUI - React components library
 
 ## Prerequisites
