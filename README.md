@@ -1,4 +1,4 @@
-# JustPostIt
+# To-Do-List
 
 This project is a simple to do list which the user can create, complete and delete tasks.
 
@@ -31,3 +31,7 @@ it will install the dependencies in node_moudles
 npm start
 ```
 it will run the app.
+
+## Active site
+
+https://orielprog.github.io/to-do-list/
